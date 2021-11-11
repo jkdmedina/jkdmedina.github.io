@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>The Cabin Library</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter&family=EB+Garamond:wght@500&display=swap" rel="stylesheet">
+    <style>
+         body {background-image: url("bg.jpg"); height: 100%; width: 100%; margin: 0;}
+         .div0 {margin-left: auto; 
+               margin-right: auto; 
+               margin-top: 0px; 
+               width: 1250px;;
+               text-align: center;}
+         .div1 {margin-left: auto; 
+               margin-right: auto; 
+               margin-top: 0px; 
+               width: 1250px; height: 160px;}
+         ul {list-style-type: none;
+             margin: 0;
+             padding: 0;
+             border: 2px;
+             border-style: solid none solid none;
+             border-color: cornsilk;
+             overflow: hidden;
+             background-color: rgb(41, 13, 1);}
+         li {float: left;}
+         li a { display: block;
+                color: rgb(255, 255, 255);
+                text-align: center;
+                padding: 14px 16px;
+                font-family: 'Bitter', serif;
+                text-decoration: none;}
+         li a:hover {background-color: rgb(102, 51, 30);}
+         li a.active { color: rgb(0, 0, 0);
+                       background-color: #ce855b;}
+         aside {width: 280px;
+                margin-top: 15px;
+                margin-bottom: 50px;
+                padding: 15px;
+                border-style: double;
+                border-color: cornsilk;
+                border-width: 8px;
+                font-family: 'EB Garamond', serif;
+                background-color: rgb(41, 13, 1);
+                color: cornsilk;
+                float: left;
+                overflow: auto;}
+         aside h2 {margin-top: 0px; color: white;}
+         section {width: 848px;
+                   height: 701px;
+                   margin-top: 15px;
+                   margin-left: 15px;
+                   margin-bottom: 50px;
+                   padding: 15px;
+                   padding-right: 30px;
+                   border-style: double;
+                   border-color: cornsilk;
+                   border-width: 8px;
+                   background-color: rgb(41, 13, 1);
+                   color: white;
+                   float: left;
+                   overflow: auto;}
+         .subsection {width: 813px;
+                   padding: 15px;
+                   border-style: solid;
+                   border-width: 1px;
+                   font-family: 'EB Garamond', serif;
+                   background-color: #c0967e;
+                   color: rgb(0, 0, 0);
+                   float: left;}
+         .article {width: 229px;
+                   height: 360px;
+                   padding: 15px;
+                   text-align: center;
+                   border-style: hidden hidden hidden solid;
+                   border-width: 4px;
+                   border-color: rgb(41, 13, 1);
+                   font-family: 'Bitter', serif;
+                   background-color: cornsilk;
+                   color: rgb(41, 13, 1);
+                   float: left;}
+         .article2 {width: 229px;
+                   height: 360px;
+                   padding: 15px;
+                   text-align: center;
+                   border-style: hidden hidden hidden solid;
+                   border-color: rgb(41, 13, 1);
+                   border-width: 4px;
+                   font-family: 'Bitter', serif;
+                   background-color: cornsilk;
+                   color: rgb(41, 13, 1);
+                   float: left;}
+         .articleRE {width: 230px;
+                   height: 280px;
+                   padding: 15px;;
+                   text-align: center;
+                   border-style: solid;
+                   border-color: rgb(41, 13, 1);
+                   border-width: 4px;
+                   font-family: 'Bitter', serif;
+                   background-color: cornsilk;
+                   color: rgb(0, 0, 0);
+                   float: left;}
+         aside div a:link {color: rgb(41, 13, 1);background-color: transparent;text-decoration: none;}
+         aside div a:visited {color: rgb(41, 13, 1);background-color: transparent;text-decoration: none;}
+         aside div a:hover {color: rgb(92, 45, 25);background-color: transparent;text-decoration: underline;}
+         .footer {
+                  margin-bottom: 50px; 
+                  margin-right: auto;
+                  margin-left: auto;
+                  margin-top: 50px;
+                  left: 0;
+                  bottom: 0;
+                  width: 1250px;
+                  height: 100px;
+                  color: #46092c;
+                  text-align: center;}
+    </style>
+</head>
+<body>
+   <div class="div0">
+    <div class="div1">
+        <div><h1 style="font-size: 100px; color: cornsilk;">The Cabin Library</h1></div>
+    </div>
+    <div class="navi">
+      <ul>
+        <li><a href="index.html"><b>Home</b></a></li>
+        <li><a href="fantasy.html"><b>Fantasy</b></a></li>
+        <li><a href="scifi.html"><b>Science Fiction</b></a></li>
+        <li><a class="active" href="horror.html"><b>Horror</b></a></li>
+        <li><a href="about.html"><b>About</b></a></li>
+      </ul>
+    </div>
+    <div>
+    <aside>
+        <h2>AUTHORS</h2>
+        <div class="articleRE" style="margin-right: 10px;">
+            <img src="rlstine.jpg" alt="R. L. Stine" width="234">
+            <h3>Robert Lawrence Stine</h3>
+            <a href="#goosebumps">See Books...</a>
+        </div>
+        <div class="articleRE" style="margin-right: 10px; margin-top: 15px;">
+            <img src="stephenking.jpg" alt="Stephen King" width="234">
+            <h3>Stephen Edwin King</h3>
+            <a href="#skary">See Books...</a>
+        </div>
+    </aside>
+    <section>
+        <div id="goosebumps" class="subsection">
+            <h2 style="margin-top: 0px">Goosebumps by R.L. Stine</h2>
+            <div class="article" style="margin-right: 10px;">
+                <a href="https://www.amazon.com/Night-Living-Dummy-Classic-Goosebumps/dp/05450351713"><img src="slappy.jpg" alt="Night of the Living Dummy" width="234"></a>
+            </div>
+            <div class="article" style="margin-right: 10px;">
+                <a href="https://www.amazon.com/Welcome-Dead-House-Classic-Goosebumps/dp/0545158885"><img src="deadhouse.jpg" alt="Welcome to Dead House" width="234"></a>
+            </div>
+            <div class="article">
+                <a href="https://www.amazon.com/Ghost-Next-Door-Classic-Goosebumps/dp/0545828848"><img src="ghost.jpg" alt="the Ghost Next Door" width="234"></a>
+            </div>
+        </div>
+        <div id="skary" class="subsection" style="margin-top: 15px;">
+            <h2 style="margin-top: 0px">Stephen King Classics</h2>
+            <div class="article2" style="margin-right: 10px;">
+                <a href="https://www.amazon.com/Novel-Stephen-King/dp/1501142976"><img src="it.jpg" alt="It" width="234"></a>
+            </div>
+            <div class="article2" style="margin-right: 10px;">
+                <a href="https://www.amazon.com/Shining-Stephen-King/dp/0307743659"><img src="shining.jpg" alt="The Shining" width="234"></a>
+            </div>
+            <div class="article2">
+                <a href="https://www.amazon.com/Carrie-Stephen-King/dp/0307743667"><img src="carrie.jpg" alt="Carrie" width="234"></a>
+            </div>
+        </div>
+        </section>
+        </div>
+    </div>
+ 
+
+</body>
+</html>

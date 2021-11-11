@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>The Cabin Library</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter&family=EB+Garamond:wght@500&display=swap" rel="stylesheet">
+    <style>
+         body {background-image: url("bg.jpg"); height: 100%; width: 100%; margin: 0;}
+         .div0 {margin-left: auto; 
+               margin-right: auto; 
+               margin-top: 0px; 
+               width: 1250px;;
+               text-align: center;}
+         .div1 {margin-left: auto; 
+               margin-right: auto; 
+               margin-top: 0px; 
+               width: 1250px; height: 160px;}
+         ul {list-style-type: none;
+             margin: 0;
+             padding: 0;
+             border: 2px;
+             border-style: solid none solid none;
+             border-color: cornsilk;
+             overflow: hidden;
+             background-color: rgb(41, 13, 1);}
+         li {float: left;}
+         li a { display: block;
+                color: rgb(255, 255, 255);
+                text-align: center;
+                padding: 14px 16px;
+                font-family: 'Bitter', serif;
+                text-decoration: none;}
+         li a:hover {background-color: rgb(102, 51, 30);}
+         li a.active { color: rgb(0, 0, 0);
+                       background-color: #ce855b;}
+         aside {width: 280px;
+                margin-top: 15px;
+                margin-bottom: 50px;
+                padding: 15px;
+                border-style: double;
+                border-color: cornsilk;
+                border-width: 8px;
+                font-family: 'EB Garamond', serif;
+                background-color: rgb(41, 13, 1);
+                color: cornsilk;
+                float: left;
+                overflow: auto;}
+         aside h2 {margin-top: 0px; color: white;}
+         section {width: 848px;
+                   height: 1035px;
+                   margin-top: 15px;
+                   margin-left: 15px;
+                   margin-bottom: 50px;
+                   padding: 15px;
+                   padding-right: 30px;
+                   border-style: double;
+                   border-color: cornsilk;
+                   border-width: 8px;
+                   background-color: rgb(41, 13, 1);
+                   color: white;
+                   float: left;
+                   overflow: auto;}
+         .subsection {width: 813px;
+                   padding: 15px;
+                   border-style: solid;
+                   border-width: 1px;
+                   font-family: 'EB Garamond', serif;
+                   background-color: #c0967e;
+                   color: rgb(0, 0, 0);
+                   float: left;}
+         .article {width: 229px;
+                   height: 360px;
+                   padding: 15px;
+                   text-align: center;
+                   border-style: hidden hidden hidden solid;
+                   border-width: 4px;
+                   border-color: rgb(41, 13, 1);
+                   font-family: 'Bitter', serif;
+                   background-color: cornsilk;
+                   color: rgb(41, 13, 1);
+                   float: left;}
+         .article2 {width: 229px;
+                   height: 360px;
+                   padding: 15px;
+                   text-align: center;
+                   border-style: hidden hidden hidden solid;
+                   border-color: rgb(41, 13, 1);
+                   border-width: 4px;
+                   font-family: 'Bitter', serif;
+                   background-color: cornsilk;
+                   color: rgb(41, 13, 1);
+                   float: left;}
+         .articleRE {width: 230px;
+                   height: 280px;
+                   padding: 15px;;
+                   text-align: center;
+                   border-style: solid;
+                   border-color: rgb(41, 13, 1);
+                   border-width: 4px;
+                   font-family: 'Bitter', serif;
+                   background-color: cornsilk;
+                   color: rgb(0, 0, 0);
+                   float: left;}
+         aside div a:link {color: rgb(41, 13, 1);background-color: transparent;text-decoration: none;}
+         aside div a:visited {color: rgb(41, 13, 1);background-color: transparent;text-decoration: none;}
+         aside div a:hover {color: rgb(92, 45, 25);background-color: transparent;text-decoration: underline;}
+         .footer {
+                  margin-bottom: 50px; 
+                  margin-right: auto;
+                  margin-left: auto;
+                  margin-top: 50px;
+                  left: 0;
+                  bottom: 0;
+                  width: 1250px;
+                  height: 100px;
+                  color: #46092c;
+                  text-align: center;}
+    </style>
+</head>
+<body>
+   <div class="div0">
+    <div class="div1">
+        <div><h1 style="font-size: 100px; color: cornsilk;">The Cabin Library</h1></div>
+    </div>
+    <div class="navi">
+      <ul>
+        <li><a href="index.html"><b>Home</b></a></li>
+        <li><a href="fantasy.html"><b>Fantasy</b></a></li>
+        <li><a class="active" href="scifi.html"><b>Science Fiction</b></a></li>
+        <li><a href="horror.html"><b>Horror</b></a></li>
+        <li><a href="about.html"><b>About</b></a></li>
+      </ul>
+    </div>
+    <div>
+    <aside>
+        <h2>AUTHORS</h2>
+        <div class="articleRE" style="margin-right: 10px;">
+            <img src="claudiagray.jpg" alt="Claudia Gray" width="234">
+            <h3>Claudia Gray</h3>
+            <a href="#defy">See Books...</a>
+        </div>
+        <div class="articleRE" style="margin-right: 10px; margin-top: 15px; height: 300px;">
+            <img src="amiejay.jpg" alt="Jay Kristoff and Amie Kaufman" width="234">
+            <h3>Jay Kristoff | Amie Kaufman</h3>
+            <a href="#aurora">See Books...</a>
+        </div>
+        
+        <div class="articleRE" style="margin-right: 10px; margin-top: 15px;">
+            <img src="marissameyer.jpg" alt="Marissa Meyer" width="234">
+            <h3>Marissa Meyer</h3>
+            <a href="#renegade">See Books...</a>
+        </div>
+    </aside>   
+    <section>
+        <div id="defy" class="subsection">
+            <h2 style="margin-top: 0px">Constellation Series by Claudia Gray</h2>
+            <div class="article" style="margin-right: 10px;">
+                <a href="https://www.amazon.com/Defy-Stars-Claudia-Gray/dp/0316394033"><img src="defythestars.jpg" alt="Defy The Stars" width="234"></a>
+            </div>
+            <div class="article" style="margin-right: 10px;">
+                <a href="https://www.amazon.com/Defy-Worlds-Stars-Claudia-Gray/dp/0316394106"><img src="defytheworlds.jpg" alt="Defy The Worlds" width="234"></a>
+            </div>
+            <div class="article">
+                <a href="https://www.amazon.com/Defy-Fates-Stars-Claudia-Gray/dp/0316440752"><img src="defythefates.jpg" alt="Defy The Fates" width="234"></a>
+            </div>
+        </div>
+        <div id="aurora" class="subsection" style="margin-top: 15px;">
+            <h2 style="margin-top: 0px">The Aurora Cycle by Amie Kaufman and Jay Kristoff</h2>
+            <div class="article2" style="margin-right: 10px;">
+                <a href="https://www.amazon.com/Aurora-Rising-Cycle-Amie-Kaufman/dp/1524720968"><img src="aurorarising.jpg" alt="Aurora Rising" width="234"></a>
+            </div>
+            <div class="article2" style="margin-right: 10px;">
+                <a href="https://www.amazon.com/Aurora-Burning-Cycle-Amie-Kaufman/dp/1524720925"><img src="auroraburning.jpg" alt="Aurora Burning" width="234"></a>
+            </div>
+            <div class="article2">
+                <a href="https://www.amazon.com/Auroras-End-Aurora-Cycle-Book-ebook/dp/B08YMTM29L"><img src="auroraend.jpg" alt="Aurora's End" width="234"></a>
+            </div>
+        </div>
+        <div id="renegade" class="subsection" style="margin-top: 15px;">
+            <h2 style="margin-top: 0px">Renegades by Marissa Meyer</h2>
+            <div class="article2" style="margin-right: 10px;">
+                <a href="https://www.amazon.com/Renegades-Marissa-Meyer/dp/1250044669"><img src="renegades.jpg" alt="Renegades" width="234"></a>
+            </div>
+            <div class="article2" style="margin-right: 10px;">
+                    <a href="https://www.amazon.com/Archenemies-Renegades-Marissa-Meyer/dp/125007830X"><img src="archenemies.jpg" alt="Archenemies" width="234"></a>
+            </div>
+            <div class="article2">
+                    <a href="https://www.amazon.com/Supernova-Marissa-Meyer/dp/1250078385"><img src="supernova.jpg" alt="Supernova" width="234"></a>
+            </div>
+        </div>
+     </section>
+    </div>
+     </div>
+ 
+
+</body>
+</html>
