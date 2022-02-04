@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Grades: View</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    
+    <style>
+    
+        body{
+            background-color: #0b1027;
+            color:#e6e7ec;
+        }
+        
+    
+            .row {margin: 0px;}
+            .nav-link {color: white;}
+            .nav-link:hover {color: white;}
+            .dropdown-menu1 { background-color: #1e213f;
+                display: none;
+                position: absolute;
+                min-width: 350px;
+                max-width: 350px;
+                border: 2px solid #05022a;
+                z-index: 9;}
+            .dropdown-toggle::after {content: none;}
+            .dropdown-menu2 { background-color: #1e213f; color: rgb(230, 231, 236);
+                display: none;
+                position: absolute;
+                min-width: 350px;
+                max-width: 350px;
+                top: 70px;
+                right: 0px;
+                border: 2px solid #05022a;
+                z-index: 9;
+                padding: 0px;}
+            .p-2 {background-color: #1e213f;
+                display: none;
+                position: absolute;
+                min-width: 350px;
+                right: 0px;
+                z-index: 9; margin-top: 20px;}
+            .dropdown-item1 {margin: 20px;}
+            .notbtn {
+            background-color: #0b3f83;
+            border: none;
+            color: white;
+            border-radius: 5px;}
+.header {background-color: #0b3f83;}
+#notif {min-height: 40vw; max-height: 40vw;}
+.alert-primary {background-color: rgb(65, 64, 102); color: rgb(230, 231, 236); border-color: #0c0a27;}
+            #settings .dropdown-item {color: rgb(230, 231, 236);}
+            #settings .dropdown-item:hover {color: rgb(230, 231, 236); background-color: #5c5d7e;}
+	
+	@media screen and (max-width: 780px) and (min-width: 300px) {
+		.priority-3{
+			display:none;
+		}
+	}
+	
+	@media screen and (max-width: 300px) {
+        .priority-3{
+			display:none;
+		}
+		.priority-2{
+			display:none;
+		}
+	
+	}
+        
+        footer {background-color: #0b3f83 !important; color: #e6e7ec;}
+        
+        footer a {color: white;}
+        footer a:hover {color: white; text-decoration: none;}
+
+        .underline{display: inline-block;
+                    position: relative;
+                    color: #ffffff;}
+
+        .underline:after {content: '';
+                  position: absolute;
+                  width: 100%;
+                  transform: scaleX(0);
+                  height: 2px;
+                  bottom: 0;
+                  left: 0;
+                  background-color: #ffffff;
+                  transform-origin: bottom right;
+                  transition: transform 0.4s ease-out;}
+
+        .underline:hover:after {transform: scaleX(1);
+                        transform-origin: bottom left;}
+        
+        
+        a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .card {
+            border-radius:15px;
+        }
+        
+        ::-webkit-scrollbar {
+                width: 0.5vw;
+                background-color: gray;
+            }
+            ::-webkit-scrollbar-track {
+                width: 2vw;
+                border: 1px solid gray; 
+                border-radius: 10px;
+            }
+            ::-webkit-scrollbar-thumb {
+                width: 2vw;
+                background-color: dimgray;
+                border-radius: 50px;
+            }
+        
+        .btn-outline-light:hover{
+            background-color: #C64C18 !important;
+            color: white !important;
+        }
+        
+    </style>
+    
+    
+</head>
+<body>
+
+<!--Header-->
+  <div class="header container-fluid row sticky-top">
+  <nav class="header container-fluid navbar sticky-top navbar-light navbar-expand py-0">
+    
+    <!--Logo Big-->
+    <div class="container-fluid col col-xl-0 d-none d-md-inline">
+      <a href="darkhome.html" class="navbar-brand has-logo py-0">
+        <span class="logo d-none d-sm-inline">
+          <img src="images/pshstitle.png" alt="PSHS" style="height: 70px;">
+        </span>
+              </a>
+          </div>
+
+    <!--Logo Small-->
+      <a href="darkhome.html" class="navbar-brand has-logo my-1">
+        <span class="logo d-inline d-md-none">
+          <img src="images/pshs-removebg-preview.png" alt="PSHS" style="height: 70px;">
+        </span>
+      </a>
+
+    <!--Symbols-->
+    <div class="container-fluid col col-xs-5 col-md-4 col-xl-3 py-3 px-0">
+              <ul class="nav ml-auto">
+
+        <!--Message-->
+                  <li class="nav-item">
+                    <a class="nav-link zoom dropdown-toggle" href="#" data-toggle="dropdown">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-chat-square-text text-white" viewBox="0 0 16 16">
+                          <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-2.5a2 2 0 0 0-1.6.8L8 14.333 6.1 11.8a2 2 0 0 0-1.6-.8H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5a1 1 0 0 1 .8.4l1.9 2.533a1 1 0 0 0 1.6 0l1.9-2.533a1 1 0 0 1 .8-.4H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                          <path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6zm0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/>
+                      </svg>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu2">
+                      <div class="dropdown-item1">
+                      <form class="w-100" action="/action_page.php">
+                        <div class="form-group">
+                          <label for="email">Email Recipient</label>
+                          <input type="email" class="form-control" id="email" placeholder="Ex: janeausten@email.com" name="email">
+                        </div>
+                        <div class="form-group">
+                          <label for="comment">Message:</label>
+                          <textarea class="form-control" rows="5" id="comment" placeholder="Type your message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send</button>
+                      </form>
+                      </div>
+                    </div>
+                  </li>
+
+        <!--Notifications-->
+                  <li class="nav-item">
+                    <button class="notbtn nav-link zoom dropdown-toggle" onclick="openbox()">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bell text-white" viewBox="0 0 16 16">
+                          <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
+                      </svg>
+                    </button>
+                    <div class="p-2 overflow-auto rounded" id="notif">
+                      <div class="notify alert alert-primary alert-dismissible fade show p-3 pr-5 pb-1 m-1 pt-0 " >
+                        <button class="close" data-dismiss="alert">&times;</button>
+                        <strong>Reminder:</strong> <br> You have upcoming activities due.
+                      </div>
+                      <div class="notify alert alert-primary alert-dismissible fade show p-3 pr-5 m-1 pt-0">
+                        <button type="button" class="close"  data-dismiss="alert">&times;</button>
+                        <strong>Biology:</strong> <br> You have received  a feedback on Lab Activity 1.
+                      </div>
+                      <div class="notify alert alert-primary alert-dismissible fade show p-3 pr-5 m-1 pt-0">
+                        <button type="button" class="close"  data-dismiss="alert">&times;</button>
+                        <strong>Chemistry:</strong> <br> You have received a feedback on Formative Assessment 1.
+                      </div>
+                      <div class="notify alert alert-primary alert-dismissible fade show p-3 pr-5 m-1 pt-0">
+                        <button type="button" class="close"  data-dismiss="alert">&times;</button>
+                        <strong>Physics:</strong> <br> You have received a feedback on 2nd Quarter Project.
+                      </div>
+                      <div class="notify alert alert-primary alert-dismissible fade show p-3 pr-5 m-1 pt-0">
+                        <button type="button" class="close"  data-dismiss="alert">&times;</button>
+                        <strong>Computer Science:</strong> <br> You have successfully submitted 2nd Quarter Project
+                      </div>
+                        <button class="notbtn my-3 ml-1" onclick="closebox()"> Close </button>
+                    </div>
+                      <script>
+                          function openbox() {
+                              document.getElementById("notif").style.display = "block";
+                          }
+
+                          function closebox() {
+                              document.getElementById("notif").style.display = "none";
+                          }
+                      </script>
+                      <script>
+                          var close = document.getElementsByClassName("closebtn");
+                          var i;
+
+                          for (i = 0; i < close.length; i++) {
+                              close[i].onclick = function(){
+                                  var div = this.parentElement;
+                                  div.style.opacity = "0";
+                                  setTimeout(function(){ div.style.display = "none"; }, 600);
+                              }
+                          }
+                      </script>
+                      
+                  </li>
+
+        <!--Light Bulb-->
+        <li class="nav-item">
+          <a class="nav-link zoom dropdown-toggle" href="chemgrades.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-lightbulb" viewBox="0 0 16 16">
+                <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1z"/>
+            </svg>
+          </a>
+        </li>
+        <!--Light Bulb End-->
+
+        <!--Gear-->
+                  <li id="settings" class="nav-item">
+                    <a class="nav-link zoom dropdown-toggle" href="#" data-toggle="dropdown">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-gear text-white" viewBox="0 0 16 16">
+                          <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
+                          <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
+                      </svg>
+                    </a>
+                  <div class="dropdown-menu dropdown-menu1">
+                    <a class="dropdown-item" href="#">Profile</a>
+                    <a class="dropdown-item" href="#">Settings</a>
+                    <a class="dropdown-item" href="#">Author</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Log-Out</a>
+                  </div>
+                  </li>
+
+                </ul>
+
+          </div>
+      </nav>
+  </div>
+  <!--Header End-->
+    
+    <div class="container">
+    
+    <br/>
+    <div class="card shadow-sm" style="background-color: #993408; color:#e6e7ec;">
+    <div class="card-body">
+    <div class="row">
+        <div class="col-sm-10"><h1>Chemistry 1</h1></div>
+        <div class="col-sm-2" style="text-align: right; line-height: 50px;"><a href="gwacomputedark2.html" class="btn btn-outline-light" role="button">GWA</a></div>
+    </div>
+	</div>
+    </div>
+    <br/>
+    
+    <div class="card shadow-sm" style="background-color: #5c5d7e; color:#e6e7ec;">
+      <div class="card-header">User Report - John Doe</div>
+    <div class="card-body">
+  <table class="table table-striped" style="color:#e6e7ec">
+    <thead>
+      <tr>
+        <th class="priority-1">Grade Item</th>
+        <th class="priority-3">Calculated Weight</th>
+        <th class="priority-2">Grade</th>
+        <th class="priority-2">Range</th>
+        <th class="priority-3">Percentage</th>
+        <th class="priority-3">Feedback</th>
+        <th class="priority-3">Contribution to course total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th colspan="7">1st Quarter</th>
+      </tr>
+      <tr>
+        <th colspan="7">&#8627;	Formative Assessments</th>
+      </tr>
+      <tr>
+          <td class="priority-1" style="padding-left:25px;"><a href="https://khub.clc.pshs.edu.ph/mod/assign/view.php?id=35986" >Formative Assessment 1</a></td>
+        <td class="priority-3">45.23%</td>
+        <td class="priority-2">20</td>
+        <td class="priority-2">0-25</td>
+        <td class="priority-3">80%</td>
+        <td class="priority-3">-</td>
+        <td class="priority-3">11%</td>
+      </tr>
+      <tr>
+        <td class="priority-1" style="padding-left:25px;"><a href="https://khub.clc.pshs.edu.ph/mod/quiz/grade.php?id=35982&itemnumber=0&userid=266">Formative Assessment 2</a></td>
+        <td class="priority-3">38.46%</td>
+        <td class="priority-2">24</td>
+        <td class="priority-2">0-25</td>
+        <td class="priority-3">96%</td>
+        <td class="priority-3">-</td>
+        <td class="priority-3">7.13%</td>
+      </tr>
+      <tr>
+        <td class="priority-1" style="padding-left:25px;"><a href="https://khub.clc.pshs.edu.ph/mod/quiz/grade.php?id=35982&itemnumber=0&userid=266">Formative Assessment 3</a></td>
+        <td class="priority-3">26.91%</td>
+        <td class="priority-2">19</td>
+        <td class="priority-2">0-20</td>
+        <td class="priority-3">96%</td>
+        <td class="priority-3">-</td>
+        <td class="priority-3">18.37%</td>
+      </tr>
+      <tr>
+        <th class="priority-1" style="padding-left:25px;">&Sigma; Formative Assessment Total</th>
+        <th class="priority-3">80.45%</th>
+        <th class="priority-2">1.25</th>
+        <th class="priority-2">1-5</th>
+        <th class="priority-3">94.50%</th>
+        <th class="priority-3">-</th>
+        <th class="priority-3">-</th>
+      </tr>
+      <tr>
+        <th colspan="7">&#8627;	Alternative Assessments</th>
+      </tr>
+      <tr>
+        <td class="priority-1" style="padding-left:25px;"><a href="https://khub.clc.pshs.edu.ph/mod/quiz/grade.php?id=35982&itemnumber=0&userid=266"> Alternative Assessment 1</a></td>
+        <td class="priority-3">20.91%</td>
+        <td class="priority-2">18</td>
+        <td class="priority-2">0-30</td>
+        <td class="priority-3">60%</td>
+        <td class="priority-3">-</td>
+        <td class="priority-3">15%</td>
+      </tr>
+      <tr>
+        <td class="priority-1" style="padding-left:25px;"><a href="https://khub.clc.pshs.edu.ph/mod/quiz/grade.php?id=35982&itemnumber=0&userid=266"> Alternative Assessment 2</a></td>
+        <td class="priority-3">27.89%</td>
+        <td class="priority-2">25</td>
+        <td class="priority-2">0-30</td>
+        <td class="priority-3">96%</td>
+        <td class="priority-3">-</td>
+        <td class="priority-3">15%</td>
+      </tr>
+      <tr>
+        <th class="priority-1" style="padding-left:25px;">&Sigma; Alternative Assessment Total</th>
+        <th class="priority-3">74.58%</th>
+        <th class="priority-2">2.00</th>
+        <th class="priority-2">1-5</th>
+        <th class="priority-3">81.50%</th>
+        <th class="priority-3">-</th>
+        <th class="priority-3">-</th>
+      </tr>
+      <tr>
+        <th colspan="7">&#8627;	Final Assessments</th>
+      </tr>
+      <tr>
+        <td class="priority-1" style="padding-left:25px;"><a href="https://khub.clc.pshs.edu.ph/mod/quiz/grade.php?id=35982&itemnumber=0&userid=266"> Long Exam 1</a></td>
+        <td class="priority-3">48.45%</td>
+        <td class="priority-2">38</td>
+        <td class="priority-2">0-45</td>
+        <td class="priority-3">81%</td>
+        <td class="priority-3">-</td>
+        <td class="priority-3">25%</td>
+      </tr>
+        <tr><td class="priority-1" style="padding-left:25px;"><a href="https://khub.clc.pshs.edu.ph/mod/quiz/grade.php?id=35982&itemnumber=0&userid=266"> Long Exam 2</a></td>
+        <td class="priority-3">30.16%</td>
+        <td class="priority-2">34</td>
+        <td class="priority-2">0-35</td>
+        <td class="priority-3">96%</td>
+        <td class="priority-3">-</td>
+        <td class="priority-3">25%</td>
+      </tr>
+      <tr>
+        <th class="priority-1" style="padding-left:25px;">&Sigma; Final Assessment Total</th>
+        <th class="priority-3">28.71%</th>
+        <th class="priority-2">2.25</th>
+        <th class="priority-2">1-5</th>
+        <th class="priority-3">78.91%</th>
+        <th class="priority-3">-</th>
+        <th class="priority-3">-</th>
+      </tr>
+      <tr>
+        <th class="priority-1">&Sigma; First Quarter Total</th>
+        <th class="priority-3">70.89%</th>
+        <th class="priority-2">1.75</th>
+        <th class="priority-2">1-5</th>
+        <th class="priority-3">83.75%</th>
+        <th class="priority-3">-</th>
+        <th class="priority-3">-</th>
+      </tr>
+      <tr>
+        <th colspan="7">2nd Quarter</th>
+      </tr>
+      <tr>
+        <th colspan="7">&#8627;	Formative Assessments</th>
+      </tr>
+      <tr>
+          <td class="priority-1" style="padding-left:25px;"><a href="https://khub.clc.pshs.edu.ph/mod/assign/view.php?id=35986" >Formative Assessment 1</a></td>
+        <td class="priority-3">45.23%</td>
+        <td class="priority-2">20</td>
+        <td class="priority-2">0-25</td>
+        <td class="priority-3">80%</td>
+        <td class="priority-3">-</td>
+        <td class="priority-3">11%</td>
+      </tr>
+      <tr>
+        <td class="priority-1" style="padding-left:25px;"><a href="https://khub.clc.pshs.edu.ph/mod/quiz/grade.php?id=35982&itemnumber=0&userid=266">Formative Assessment 2</a></td>
+        <td class="priority-3">38.46%</td>
+        <td class="priority-2">24</td>
+        <td class="priority-2">0-25</td>
+        <td class="priority-3">96%</td>
+        <td class="priority-3">-</td>
+        <td class="priority-3">7.13%</td>
+      </tr>
+      <tr>
+        <td class="priority-1" style="padding-left:25px;"><a href="https://khub.clc.pshs.edu.ph/mod/quiz/grade.php?id=35982&itemnumber=0&userid=266">Formative Assessment 3</a></td>
+        <td class="priority-3">26.91%</td>
+        <td class="priority-2">19</td>
+        <td class="priority-2">0-20</td>
+        <td class="priority-3">96%</td>
+        <td class="priority-3">-</td>
+        <td class="priority-3">18.37%</td>
+      </tr>
+      <tr>
+        <th class="priority-1" style="padding-left:25px;">&Sigma; Formative Assessment Total</th>
+        <th class="priority-3">80.45%</th>
+        <th class="priority-2">1.25</th>
+        <th class="priority-2">1-5</th>
+        <th class="priority-3">94.50%</th>
+        <th class="priority-3">-</th>
+        <th class="priority-3">-</th>
+      </tr>
+      <tr>
+        <th colspan="7">&#8627;	Alternative Assessments</th>
+      </tr>
+      <tr>
+        <td class="priority-1" style="padding-left:25px;"><a href="https://khub.clc.pshs.edu.ph/mod/quiz/grade.php?id=35982&itemnumber=0&userid=266"> Alternative Assessment 1</a></td>
+        <td class="priority-3">20.91%</td>
+        <td class="priority-2">18</td>
+        <td class="priority-2">0-30</td>
+        <td class="priority-3">60%</td>
+        <td class="priority-3">-</td>
+        <td class="priority-3">15%</td>
+      </tr>
+      <tr>
+        <td class="priority-1" style="padding-left:25px;"><a href="https://khub.clc.pshs.edu.ph/mod/quiz/grade.php?id=35982&itemnumber=0&userid=266"> Alternative Assessment 2</a></td>
+        <td class="priority-3">27.89%</td>
+        <td class="priority-2">25</td>
+        <td class="priority-2">0-30</td>
+        <td class="priority-3">96%</td>
+        <td class="priority-3">-</td>
+        <td class="priority-3">15%</td>
+      </tr>
+      <tr>
+        <th class="priority-1" style="padding-left:25px;">&Sigma; Alternative Assessment Total</th>
+        <th class="priority-3">74.58%</th>
+        <th class="priority-2">2.00</th>
+        <th class="priority-2">1-5</th>
+        <th class="priority-3">81.50%</th>
+        <th class="priority-3">-</th>
+        <th class="priority-3">-</th>
+      </tr>
+      <tr>
+        <th colspan="7">&#8627;	Final Assessments</th>
+      </tr>
+      <tr>
+        <td class="priority-1" style="padding-left:25px;"><a href="https://khub.clc.pshs.edu.ph/mod/quiz/grade.php?id=35982&itemnumber=0&userid=266"> Long Exam 1</a></td>
+        <td class="priority-3">48.45%</td>
+        <td class="priority-2">38</td>
+        <td class="priority-2">0-45</td>
+        <td class="priority-3">81%</td>
+        <td class="priority-3">-</td>
+        <td class="priority-3">25%</td>
+      </tr>
+        <tr><td class="priority-1" style="padding-left:25px;"><a href="https://khub.clc.pshs.edu.ph/mod/quiz/grade.php?id=35982&itemnumber=0&userid=266"> Long Exam 2</a></td>
+        <td class="priority-3">30.16%</td>
+        <td class="priority-2">34</td>
+        <td class="priority-2">0-35</td>
+        <td class="priority-3">96%</td>
+        <td class="priority-3">-</td>
+        <td class="priority-3">25%</td>
+      </tr>
+      <tr>
+        <th class="priority-1" style="padding-left:25px;">&Sigma; Final Assessment Total</th>
+        <th class="priority-3">28.71%</th>
+        <th class="priority-2">2.25</th>
+        <th class="priority-2">1-5</th>
+        <th class="priority-3">78.91%</th>
+        <th class="priority-3">-</th>
+        <th class="priority-3">-</th>
+      </tr>
+      <tr>
+        <th class="priority-1">&Sigma; Second Quarter Total</th>
+        <th class="priority-3">80.45%</th>
+        <th class="priority-2">2.00</th>
+        <th class="priority-2">1-5</th>
+        <th class="priority-3">78%</th>
+        <th class="priority-3">-</th>
+        <th class="priority-3">-</th>
+      </tr>
+    </tbody>
+    </table>
+</div>
+</div>
+    </div>
+        
+        
+        
+    <!--Footer-->
+        <footer class="container-fluid mt-3 mx-auto mb-0">
+
+          <div class="row justify-content-center mt-3 mb-0 pb-3">
+
+              <div class="col-lg-4 pt-4">
+
+                <h3 class="mb-3">Contact Us</h3>
+                <a href="#">
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-building" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694 1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z"/>
+                      <path d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z"/>
+                    </svg>
+                  &nbsp; 
+                  <span class="underline">Lily Potter Hill, Clark Kent Zone, Pampanga</span> 
+                </p>
+                </a>
+                <a href="#">
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                      <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+                    </svg>
+                  &nbsp; 
+                  <span class="underline">khub_reimagined@clx.pxhs.educ.px</span>
+                </p>
+                </a>
+                <a href="#">
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                      <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                    </svg>
+                  &nbsp; 
+                  <span class="underline">(045) 499 0136</span>
+                </p>
+                </a>
+  
+              </div>
+
+              <div class="col-lg-3 pt-4">
+
+              <h3 class="mb-3">Follow Us</h3>
+                <a href="#">
+                <p>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                  </svg>
+                  &nbsp; 
+                  <span class="underline">PSHS CLC KHub Reimagined</span> 
+                </p>
+                </a>
+                <a href="#">
+                <p>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                  </svg>
+                  &nbsp; 
+                  <span class="underline">CLC_KHub_Reimagined</span>
+                </p>
+                </a>
+                <a href="#">
+                <p>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                    <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+                  </svg>
+                  &nbsp; 
+                  <span class="underline">Reimagining_KHub</span>
+                </p>
+                </a>
+  
+              </div>
+
+              <div class="col-lg-3 pt-4">
+
+                <h3 class="mb-3">About Us</h3>
+                  <a href="author-page-dark.html">
+                  <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+                      <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                      <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
+                      <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+                    </svg>
+                    &nbsp; 
+                    <span class="underline">Learn About The Team</span> 
+                  </p>
+                  </a>
+    
+                </div>
+  
+          </div>
+  
+        </footer>
+<!--Footer End-->
+    
+</body>
+</html>
